@@ -4,6 +4,7 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
         extend: {},
@@ -11,5 +12,6 @@ export default {
             phone: "559px",
         },
     },
-    plugins: [],
+
+    plugins: [require("flowbite/plugin")],
 };

@@ -4,7 +4,7 @@ use App\Http\Controllers\NavController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('homepage.index');
 });
 //navigation route
 Route::group(['prefix'=>'/','as'=>'nav.'],function(){
