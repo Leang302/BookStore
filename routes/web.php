@@ -1,15 +1,20 @@
 <?php
 
-use App\Http\Controllers\NavController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('homepage.index');
 });
-//navigation route
-Route::group(['prefix'=>'/','as'=>'nav.'],function(){
-    Route::get('aboutUs',[NavController::class,'aboutUs'])->name('aboutUs');
-    Route::get('book',[NavController::class,'book'])->name('book');
-    Route::get('contactUs',[NavController::class,'contactUs'])->name('contactUs');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';
