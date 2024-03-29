@@ -9,10 +9,10 @@
             <ul role="list" class="flex flex-1 flex-col gap-y-7">
                 <li>
                     <ul role="list" class="-mx-2 space-y-1">
-                        <li>
+                        <li class="{{ request()->is('admin/dashboard') ? 'bg-gray-800 rounded' : '' }}">
                             <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
-                            <a href="#"
-                                class="bg-gray-800 text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
+                            <a href="{{ route('admin.dashboard') }}"
+                                class=" text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                                 <svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -21,7 +21,7 @@
                                 Dashboard
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ request()->is('admin/dashboard/catagories') ? 'bg-gray-800 rounded' : '' }}">
                             <a href="{{ route('admin.dashboard.catagories') }}"
                                 class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                                 <svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

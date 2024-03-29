@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashbaord</title>
+
     @vite('resources/css/app.css')
 
 </head>
@@ -31,7 +31,13 @@
             </div>
         </div>
     </div>
+
+
+    {{-- script --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <script>
         $(document).ready(function() {
             //user menu dropdown
@@ -42,7 +48,7 @@
             $('#AddCatagoryBtn').click(function() {
                 // $('#addCatagoryForm').removeClass('hidden');
                 // $('#addCatagoryForm').addClass('block');
-                $('.popup').removeClass('scale-0 opacity-0') addClass('scale-100 opacity-100');
+                // $('.popup').removeClass('scale-0 opacity-0') addClass('scale-100 opacity-100');
                 $('#addCatagoryForm').slideToggle();
                 // $('#addCatagoryForm').fadeIn(300);
             })
