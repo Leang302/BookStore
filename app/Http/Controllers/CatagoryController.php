@@ -13,9 +13,16 @@ class CatagoryController extends Controller
     }
     public function create(Request $request){
         $request->validate([
-            'name'=>'required'
+        'catagory'=>'required'
         ]);
+        $catagory = new Catagory();
+        $catagory->name = $request->catagory;
+        $catagory->save();
+     return redirect()->route('admin.dashboard.catagories');
+    }
+    public function destroy(Catagory $catagory){
 
-     return redirect()->route('admin.dashboard');
+        $catagory->delete();
+        return redirect()->route('admin.dashboard.catagories');
     }
 }

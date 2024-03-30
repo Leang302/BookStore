@@ -21,7 +21,7 @@
     {{-- table --}}
     @include('admin.components.catagory.catagoryTable')
 
-    @if ($errors->any())
+    {{-- @if ($errors->any())
         {{ $errors }}
-    @endif
+    @endif --}}
 @endsection
